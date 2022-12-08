@@ -1,53 +1,31 @@
-# CakePHP Application Skeleton
+# CakePHP 4 - Using the Tree Behavior to create a Bootstrap 5 menu
 
-![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+The CakePHP Tree Behavior implements MPTT (Modified Preorder Tree Traversal) Logic which is another way of saying you can create things like menus and other hierarchical structures easily.
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 4.x.
+This is the code to a Youtube Tutorial Video: [https://youtu.be/RYu7Aec0hqg](https://youtu.be/RYu7Aec0hqg) I created.
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
 
-## Installation
+## Video Timings
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
 
-If Composer is installed globally, run
-
-```bash
-composer create-project --prefer-dist cakephp/app
+```
+00:00 Intro
+01:04 php-dotenv
+03:10 Create a migration for a table that supports the Tree behavior
+06:47 Fixing a php-dotenv error
+08:42 Adding a Bootstrap Navbar, JS and CSS
+12:54 Overriding the default PaginatorHelper widget templates
+20:08 Creating a Database Seeder that works with the Tree Behavior
+27:53 Fixing the "No active transactions" error in the MenuSeed
+29:00 Displaying the parent / child relationships in index view and select input lists
+30:04 Storing the nesting level of a node in a database field
+34:20 Implement Tree Behavior methods: moveUp, moveDown, removeFromTree
+40:53 Styling the flash alerts with Bootstrap
+42:00 Fixing incorrect level values using either recover or by updating descendants
+50:30 Making the Menu Tree available to all  views
+53:52 Disabling DebugKit Panels
+56:15 CakePHPizing the sample Bootstrap navbar code
+01:15:115 Ordering menu items correctly
+01:18:30 Using a custom Helper to provide controller:action CakePHP menus
 ```
 
-In case you want to use a custom app dir name (e.g. `/myapp/`):
-
-```bash
-composer create-project --prefer-dist cakephp/app myapp
-```
-
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
-
-```bash
-bin/cake server -p 8765
-```
-
-Then visit `http://localhost:8765` to see the welcome page.
-
-## Update
-
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
-
-## Configuration
-
-Read and edit the environment specific `config/app_local.php` and setup the 
-`'Datasources'` and any other configuration relevant for your application.
-Other environment agnostic settings can be changed in `config/app.php`.
-
-## Layout
-
-The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
