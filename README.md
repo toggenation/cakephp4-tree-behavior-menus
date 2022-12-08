@@ -5,7 +5,7 @@ The CakePHP Tree Behavior implements MPTT (Modified Preorder Tree Traversal) Log
 This is the code to a Youtube Tutorial Video: [https://youtu.be/RYu7Aec0hqg](https://youtu.be/RYu7Aec0hqg) I created.
 
 
-## Video Timings
+## Video Subjects Covered with Timings
 
 
 ```
