@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -14,9 +15,11 @@ declare(strict_types=1);
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Event\EventInterface;
 
 /**
  * Application Controller
@@ -49,5 +52,47 @@ class AppController extends Controller
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
+    }
+
+    public function beforeRender(EventInterface $event)
+    {
+        $menuTable = $this->fetchTable('Menus');
+
+        $menuTree = $menuTable->find('threaded')
+            ->where([
+                'level <' => 2,
+            ])
+            ->order([
+                'lft' => 'ASC'
+            ]);
+
+
+        $filterInactive = function ($menusThreaded) use (&$filterInactive) {
+            $store = [];
+
+            foreach ($menusThreaded as $menu) {
+                if (!$menu->active) {
+                    continue;
+                }
+
+                $countChildren = count($menu['children']);
+
+                if ($menu->hasValue('children')) {
+                    $menu['children'] = $filterInactive($menu['children']);
+                }
+
+                if ($countChildren > 0 && empty($menu['children'])) {
+                    continue;
+                }
+
+                $store[] = $menu;
+            }
+
+            return $store;
+        };
+
+        $menuTree = $filterInactive($menuTree);
+
+        $this->set(compact('menuTree'));
     }
 }

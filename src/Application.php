@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -14,6 +15,7 @@ declare(strict_types=1);
  * @since     3.3.0
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App;
 
 use Cake\Core\Configure;
@@ -60,6 +62,24 @@ class Application extends BaseApplication
          * Debug Kit should not be installed on a production system
          */
         if (Configure::read('debug')) {
+
+            Configure::write('DebugKit.panels', [
+                'DebugKit.Cache' => true,
+                'DebugKit.Session' => true,
+                'DebugKit.Request' => true,
+                'DebugKit.SqlLog' => true,
+                'DebugKit.Timer' => false,
+                'DebugKit.Log' => true,
+                'DebugKit.Variables' => true,
+                'DebugKit.Environment' => true,
+                'DebugKit.Include' => false,
+                'DebugKit.History' => true,
+                'DebugKit.Routes' => true,
+                'DebugKit.Packages' => false,
+                'DebugKit.Mail' => false,
+                'DebugKit.Deprecations' => false,
+            ]);
+
             $this->addPlugin('DebugKit');
         }
 
