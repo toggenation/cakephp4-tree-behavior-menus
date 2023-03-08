@@ -1,11 +1,17 @@
-# CakePHP 4 - Using the Tree Behavior to create a Bootstrap 5 menu
+# CakePHP 4 - Tree Behavior Video Code
 
-The CakePHP Tree Behavior implements MPTT (Modified Preorder Tree Traversal) Logic which is another way of saying you can create things like menus and other hierarchical structures easily.
+The CakePHP Tree Behavior implements MPTT (Modified Preorder Tree Traversal) Logic.
 
-This is the code to a Youtube Tutorial Video: [https://youtu.be/RYu7Aec0hqg](https://youtu.be/RYu7Aec0hqg) I created.
+Using the Tree Behavior can create things like menus and other hierarchical structures easily.
 
-## Video Subjects Covered with Timings
+## Video Subjects
+1. **CakePHP 4 - Using the Tree Behavior to create a Bootstrap 5 menu** [https://youtu.be/RYu7Aec0hqg](https://youtu.be/RYu7Aec0hqg)
+2. **CakePHP 4 - Enable the Tree Behavior in a table with existing records** [https://youtu.be/XVqG_EypeKA](https://youtu.be/XVqG_EypeKA)
 
+This repository contains the code to the above mentioned Youtube Tutorial Videos
+
+
+## Video 1. Subjects Covered with Timings
 
 ```
 00:00 Intro
@@ -27,4 +33,20 @@ This is the code to a Youtube Tutorial Video: [https://youtu.be/RYu7Aec0hqg](htt
 01:15:115 Ordering menu items correctly
 01:18:30 Using a custom Helper to provide controller:action CakePHP menus
 ```
+
+## Video 2. Subjects Covered with Timings
+```
+00:00 Intro - What will be covered
+01:00 Create Trees table using a migration
+02:35 Bake the Model/View (templates)/Controllers for the Trees table
+05:00 Create a migration to Tree Behavior enable the Trees table
+07:00 Add Tree Behavior to TreesTable Class
+08:30 Get CakePHP 4 to build the tree structure using recover()
+09:00 Add a @mixin annotation to a class to get Tree Behavior method auto-complete working
+11:00 Protect the tree structure in the database by making lft and rght not-nullable
+14:00 Add parent_id field to allow linking an item to a parent
+17:20 Remove mass assignment protection to allow parent_id to save
+
+
+
 
