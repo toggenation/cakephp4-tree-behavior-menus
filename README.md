@@ -42,7 +42,7 @@ This repository contains the code to the above mentioned Youtube Tutorial Videos
 05:00 Create a migration to Tree Behavior enable the Trees table
 07:00 Add Tree Behavior to TreesTable Class
 08:30 Get CakePHP 4 to build the tree structure using recover()
-09:00 Add a @mixin annotation to a class to get Tree Behavior method auto-complete working
+09:00 Add a @mixin annotation to a class to get Tree Behavior vscode method auto-complete working
 11:00 Protect the tree structure in the database by making lft and rght not-nullable
 14:00 Add parent_id field to allow linking an item to a parent
 17:20 Remove mass assignment protection to allow parent_id to save
@@ -51,6 +51,7 @@ This repository contains the code to the above mentioned Youtube Tutorial Videos
 22:20 How Tree Behavior methods manages lft and rght values
 24:20 Transferring moveUp/moveDown/removeFromTree actions into the TreesController and index template
 28:15 Conclusion: The lft and rght fields are managed by the Tree Behavior
+
 ```
 
 
